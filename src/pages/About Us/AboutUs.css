@@ -1,0 +1,293 @@
+ .aboutus {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+ }
+
+ .aboutus h1 {
+    font-size: 65px;
+    font-family: "Cormorant", serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 200px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../.././assets//img/footer/footer-back-1.png');
+ }
+
+ .aboutus-hero h2 {
+    font-family: "Cormorant", serif;
+    font-size: 45px;
+    font-family: 500;
+    margin-left: 18%;
+ }
+
+ .aboutus-hero {
+    position: relative;
+    width: 100%;
+ }
+
+ .hero-content {
+    width: 100%;
+ }
+
+ .aboutus-hero img {
+    max-height: 500px;
+    width: 600px;
+    margin-left: 18%;
+
+ }
+
+ .hero-info {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 300px;
+    padding: 40px;
+    background-color: #FFF8E2;
+    justify-content: space-between;
+    position: absolute;
+    top: -20px;
+    left: 47%;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+ }
+
+ .hero-info h4 {
+    font-family: "Cormorant", serif;
+    font-weight: 700;
+    font-size: 28px;
+
+ }
+
+ .hero-info p {
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1.1px;
+ }
+
+ .tary-features {
+    width: 100%;
+ }
+
+ .tary-features h3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant", serif;
+    font-size: 30px;
+    margin-bottom: 30px;
+ }
+
+ .features-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+ }
+
+ .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    width: 25%;
+    border-top: 2px solid #803D0E;
+ }
+
+ .feature img {
+    height: 250px;
+    object-fit: contain;
+
+ }
+
+ .feature p {
+    font-family: "Mulish", sans-serif;
+    width: 90%;
+    font-weight: 300;
+    margin-top: -30px;
+ }
+
+ .feature-mid {
+    border-top: 0;
+    border-bottom: 2px solid #803D0E;
+    padding-bottom: 40px;
+ }
+
+ .feature-mid img {
+    margin-top: -30px;
+ }
+
+ .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    overflow-x: hidden;
+ }
+
+ .gallery .row-one {
+    display: flex;
+    gap: 16px;
+ }
+
+ .gallery .row-one img {
+    height: 216px;
+ }
+
+ .gallery .row-two {
+    display: flex;
+    gap: 16px;
+ }
+
+ .gallery .row-two img {
+    height: 225px;
+ }
+
+ @media screen and (max-width: 1025px) {
+
+
+    .aboutus-hero img {
+       max-height: 500px;
+       width: 600px;
+       margin-left: 144px;
+    }
+
+    .hero-info {
+       display: flex;
+       flex-direction: column;
+       width: 400px;
+       height: 250px;
+       padding: 40px;
+       background-color: #FFF8E2;
+       justify-content: space-between;
+       position: absolute;
+       top: 0px;
+       left: 40%;
+       box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .aboutus-hero h2 {
+
+       margin-left: 13%;
+    }
+
+    .gallery .row-one img {
+       height: 145px;
+    }
+
+    .gallery .row-two img {
+       height: 150px;
+    }
+ }
+
+ @media screen and (max-width: 821px) {
+    .hero-content {
+       display: flex;
+       width: 100%;
+       justify-content: center;
+    }
+
+    .aboutus-hero img {
+       max-height: 500px;
+       width: 600px;
+       margin: 0;
+    }
+
+    .hero-info {
+       display: flex;
+       flex-direction: column;
+       width: 400px;
+       height: 250px;
+       padding: 40px;
+       background-color: #FFF8E2;
+       justify-content: space-between;
+       position: absolute;
+       top: -20px;
+       left: 35%;
+       box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .aboutus-hero h2 {
+
+       margin-left: 13%;
+    }
+
+    .gallery .row-one img {
+       height: 120px;
+    }
+
+    .gallery .row-two img {
+       height: 140px;
+    }
+ }
+
+ @media screen and (max-width: 768px) {
+    .feature p {
+       width: 100%;
+    }
+ }
+
+ @media screen and (max-width: 431px) {
+    .aboutus-hero img {
+       height: 600px;
+       width: 100%;
+       object-fit: cover;
+       margin: 0;
+    }
+
+    .hero-info {
+       left: 10%;
+       top: 0px;
+       padding: 50px 20px;
+       height: 92%;
+       width: 70%;
+       justify-content: center;
+       gap: 30px;
+       padding: 20px;
+       background-color: rgba(255, 248, 226, 0.413);
+       text-align: center;
+    }
+
+    .hero-info hr {
+       border: 0.7px solid rgba(0, 0, 0, 0.295);
+    }
+
+    .aboutus-hero h2 {
+       display: none;
+    }
+
+    #insvis {
+       display: none;
+    }
+
+    .features-content {
+       flex-direction: column;
+       align-items: center;
+    }
+
+    .feature {
+       width: 100%;
+       padding-bottom: 40px;
+    }
+
+    .feature-mid {
+       border-top: 2px solid #803D0E;
+       border-bottom: 0;
+    }
+
+    #feat-three {
+       border-bottom: 2px solid #803D0E;
+    }
+
+    .feature p {
+       font-size: 16px;
+       font-weight: 300;
+       letter-spacing: 1.1px;
+    }
+ }

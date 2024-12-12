@@ -1,0 +1,34 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Chokokutai&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Chokokutai&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  :root {
+    --background-color: #FFFBFA;
+    --text-color-b: #161311;
+    --milky-color: #FFF4D4;
+    --brown-color: #803D0E;
+  }
+
+  body {
+    background-color: var(--background-color);
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .broown {
+    color: var(--brown-color);
+  }
+
+  .men-nav {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+  }

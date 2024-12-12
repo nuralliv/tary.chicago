@@ -1,0 +1,207 @@
+footer {
+   position: relative;
+   padding: 70px 100px;
+   color: white;
+   margin-top: 50px;
+}
+
+.column {
+   width: fit-content;
+   display: flex;
+   flex-direction: column;
+
+   gap: 20px;
+}
+
+.footer-content {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.medias {
+   display: flex;
+   gap: 5px;
+}
+
+.media {
+   background-color: #857C62;
+   padding: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.column h3 {
+   font-family: "Cormorant", serif;
+   font-size: 28px;
+   font-weight: 500;
+
+}
+
+
+
+.column-one p {
+   font-family: "Mulish", sans-serif;
+   font-size: 15px;
+   width: 75%;
+   font-weight: 200;
+}
+
+.column-one {
+   width: 30%;
+}
+
+
+.footer-nav {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.footer-nav-link {
+   font-family: "Mulish", sans-serif;
+   font-size: 16px;
+   font-weight: 200;
+   color: white;
+   text-decoration: none;
+}
+
+.footer-contacts {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: fit-content;
+}
+
+.footer-contacts>div {
+   display: flex;
+   align-items: center;
+   font-family: "Mulish", sans-serif;
+   gap: 10px;
+   width: fit-content;
+   font-size: 16px;
+   font-weight: 200;
+}
+
+@media screen and (max-width:821px) {
+   footer {
+      padding: 50px 50px;
+   }
+
+   .column-one p {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width:768px) {
+   footer {
+      padding: 30px 30px;
+   }
+
+   .column h3 {
+      font-size: 25px;
+   }
+
+   .column-one p {
+      font-size: 14px;
+   }
+
+   .footer-nav-link {
+      font-size: 15px;
+   }
+
+   .footer-contacts>div {
+      font-size: 15px;
+   }
+}
+
+@media screen and (max-width:431px) {
+   footer {
+      height: 55vh;
+      background-position: center;
+      background-size: cover;
+   }
+
+   .footer-content {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .column {
+      width: 100%;
+      text-align: center;
+      gap: 10px;
+   }
+
+   .column h3 {
+      font-size: 24px;
+   }
+
+   .column-one p {
+      font-size: 14px;
+      letter-spacing: 1.1px;
+   }
+
+   .medias {
+      justify-content: center;
+   }
+
+   #tiktok {
+      width: 25px;
+      height: 23px;
+   }
+
+   #insta {
+      width: 25px;
+      height: 25px;
+   }
+
+   .footer-contacts {
+      align-items: center;
+      gap: 14px;
+   }
+
+   .column-three {
+      align-items: center;
+   }
+
+   .footer-nav-link {
+      font-size: 14px;
+      text-decoration: underline;
+   }
+
+   .footer-contacts>div {
+      font-size: 16px;
+      gap: 4px;
+   }
+
+}
+
+@media screen and (max-width: 391px) {
+   footer {
+      height: 60vh;
+   }
+
+   .footer-nav-link {
+      font-size: 16px;
+   }
+
+   .footer-contacts>div {
+      font-size: 15px;
+   }
+
+   .column h3 {
+      font-size: 27px;
+   }
+
+
+}
+
+@media screen and (max-width: 376px) {
+   footer {
+      height: 80vh;
+   }
+
+}
