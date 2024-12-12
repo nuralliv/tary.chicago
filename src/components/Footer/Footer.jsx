@@ -1,7 +1,7 @@
 import './Footer.css'
 import footerBack from '../../assets/img/footer/footer-back-1.png'
-import tiktok from '../../assets/img/footer/tiktok.svg';
-import insta from '../../assets/img/footer/insta.svg';
+import tiktok from '../../assets/img/footer/Tiktok.svg';
+import insta from '../../assets/img/footer/Insta.svg';
 import locationIcon from '../../assets/img/footer/location.svg'
 import emailIcon from '../../assets/img/footer/email.svg';
 import phoneIcon from '../../assets/img/footer/phone.svg';
