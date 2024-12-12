@@ -68,10 +68,10 @@ const Header = () => {
             </div>
             <div className="header-bottom">
                <ul className="nav-links">
-                  <Link className={`nav-link ${isActive('/')}`} to={'/'}>Home</Link>
+                  <Link className={`nav-link ${isActive('/')}`} to={'/tary.chicago'}>Home</Link>
                   <Link className={`nav-link ${isActive('/about')}`} to={'/about'}>About Us</Link>
                   <Link className={`nav-link ${isActive('/menu')}`} to={'/menu'}>Menu</Link>
-                  <Link className={`nav-link ${isActive('/tary.chicago#contact')}`} to={'/#contact'}>Contact Us</Link>
+                  <Link className={`nav-link ${isActive('/#contact')}`} to={'/tary.chicago#contact'}>Contact Us</Link>
                </ul>
             </div>
             <div className="header-mobile-content">
@@ -104,7 +104,7 @@ const Header = () => {
                <ul className="side-nav-links">
                   <Link
                      className={`side-nav-link ${isActive('/')}`}
-                     to={'/'}
+                     to={'/tary.chicago'}
                      onClick={() => setOpen(false)}
                   >
                      Home
@@ -124,8 +124,8 @@ const Header = () => {
                      Menu
                   </Link>
                   <Link
-                     className={`side-nav-link ${isActive('/tary.chicago#contact')}`}
-                     to={'/#contact'}
+                     className={`side-nav-link ${isActive('/#contact')}`}
+                     to={'/tary.chicago#contact'}
                      onClick={() => setOpen(false)}
                   >
                      Contact Us
