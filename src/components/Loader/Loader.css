@@ -12,19 +12,21 @@
 }
 
 .loader img {
-   height: 130px;
-   width: 250px;
+   height: 160px;
+   width: auto;
    object-fit: cover;
    object-position: center;
-   animation: spin 1s linear infinite;
+   animation: fadeInOut 2s ease-in-out infinite;
 }
 
-@keyframes spin {
-   0% {
-      transform: 0;
+@keyframes fadeInOut {
+
+   0%,
+   100% {
+      opacity: 0;
    }
 
-   100% {
-      transform: 1;
+   50% {
+      opacity: 1;
    }
 }
