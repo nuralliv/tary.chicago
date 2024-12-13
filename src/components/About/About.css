@@ -190,6 +190,9 @@
    .about {
       height: 80vh;
    }
+   .about h2 {
+      margin-top: 50px;
+   }
 
    .about-content {
       flex-direction: column;

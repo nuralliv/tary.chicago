@@ -140,7 +140,7 @@ header.scrolling {
 }
 
 
-@media screen and (max-width: 431px) {
+@media screen and (max-width: 500px) {
    header {
       height: 70px;
    }
@@ -178,7 +178,7 @@ header.scrolling {
       background-color: black;
       margin-block: 4px;
       transform-origin: left;
-      animation: menuBtn 400ms ease-in-out alternate infinite;
+      animation: menuBtn 1000ms ease-in-out alternate infinite;
    }
 
    @keyframes menuBtn {
