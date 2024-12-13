@@ -188,8 +188,9 @@
 
 @media screen and (max-width: 431px) {
    .about {
-      height: 80vh;
+      height: 100vh;
    }
+
    .about h2 {
       margin-top: 50px;
    }
