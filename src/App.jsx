@@ -10,11 +10,10 @@ import ScrollToTop from './components/ScrollTop/ScrollTop';
 import Loader from './components/Loader/Loader';
 
 function App() {
-  const [menu, setMenu] = useState('home-nav'); // Общее состояние меню
-  const [isLoading, setIsLoading] = useState(true); // Состояние загрузки
+  const [menu, setMenu] = useState('home-nav'); 
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
-    // Проверяем завершение загрузки всех ресурсов
     const handleLoad = () => setIsLoading(false);
 
     if (document.readyState === 'complete') {

@@ -15,7 +15,8 @@ import sevenImg from '../../assets/img/About Us/seven-img.png'
 import eightImg from '../../assets/img/About Us/eight-img.png'
 import nineImg from '../../assets/img/About Us/nine-img.png'
 import tenImg from '../../assets/img/About Us/ten-img.png'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import Loader from '../../components/Loader/Loader'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -26,6 +27,22 @@ const AboutUs = () => {
       duration: 1000, // Длительность анимации в миллисекундах
     });
   }, []);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => setIsLoading(false);
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
+  }, []);
+  if (isLoading) {
+    return <Loader />; // Показываем загрузчик до завершения загрузки
+  }
+
   return (
     <section className='aboutus'>
       <h1>About Us</h1>

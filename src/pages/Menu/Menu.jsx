@@ -1,10 +1,26 @@
 import BarList from '../../components/Meal-Menu/Bar-list';
 import MealList from '../../components/Meal-Menu/Meal-list';
 import './Menu.css';
-import { useState, } from 'react';
+import { useState, useEffect } from 'react';
+import Loader from '../../components/Loader/Loader';
 
 const Menu = () => {
   const [type, setType] = useState('main'); // Тип активного элемента
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => setIsLoading(false);
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
+  }, []);
+  if (isLoading) {
+    return <Loader />; // Показываем загрузчик до завершения загрузки
+  }
 
 
   return (
