@@ -43,8 +43,8 @@ function App() {
       <Header menu={menu} setMenu={setMenu} />
       <Routes>
         <Route path='/tary.chicago' element={<Home />} />
-        <Route path='/about' element={<AboutUs />} />
-        <Route path='/menu' element={<Menu />} />
+        <Route path='/tary.chicago/about' element={<AboutUs />} />
+        <Route path='/tary.chicago/menu' element={<Menu />} />
       </Routes>
       <Footer />
     </>

@@ -24,9 +24,9 @@ const Footer = () => {
             <div className="column column-two">
                <h3>Explore</h3>
                <ul className="footer-nav">
-                  <Link to={'/'} className='footer-nav-link'>Home</Link>
-                  <Link to={'/about'} className='footer-nav-link'>About Us</Link>
-                  <Link to={'/menu'} className='footer-nav-link'>Menu</Link>
+                  <Link to={'/tary.chicago'} className='footer-nav-link'>Home</Link>
+                  <Link to={'/tary.chicago/about'} className='footer-nav-link'>About Us</Link>
+                  <Link to={'/tary.chicago/menu'} className='footer-nav-link'>Menu</Link>
                </ul>
             </div>
             <div className="column column-three">

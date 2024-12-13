@@ -69,8 +69,8 @@ const Header = () => {
             <div className="header-bottom">
                <ul className="nav-links">
                   <Link className={`nav-link ${isActive('/')}`} to={'/tary.chicago'}>Home</Link>
-                  <Link className={`nav-link ${isActive('/about')}`} to={'/about'}>About Us</Link>
-                  <Link className={`nav-link ${isActive('/menu')}`} to={'/menu'}>Menu</Link>
+                  <Link className={`nav-link ${isActive('/about')}`} to={'/tary.chicago/about'}>About Us</Link>
+                  <Link className={`nav-link ${isActive('/menu')}`} to={'/tary.chicago/menu'}>Menu</Link>
                   <Link className={`nav-link ${isActive('/#contact')}`} to={'/tary.chicago#contact'}>Contact Us</Link>
                </ul>
             </div>
@@ -110,14 +110,14 @@ const Header = () => {
                   </Link>
                   <Link
                      className={`side-nav-link ${isActive('/about')}`}
-                     to={'/about'}
+                     to={'/tary.chicago/about'}
                      onClick={() => setOpen(false)}
                   >
                      About Us
                   </Link>
                   <Link
                      className={`side-nav-link ${isActive('/menu')}`}
-                     to={'/menu'}
+                     to={'/tary.chicago/menu'}
                      onClick={() => setOpen(false)}
                   >
                      Menu
