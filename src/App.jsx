@@ -10,22 +10,31 @@ import ScrollToTop from './components/ScrollTop/ScrollTop';
 import Loader from './components/Loader/Loader';
 
 function App() {
-  const [menu, setMenu] = useState('home-nav'); 
-  const [isLoading, setIsLoading] = useState(true); 
+  const [menu, setMenu] = useState('home-nav');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => setIsLoading(false);
+    const resourcesToLoad = [
+      new Promise((resolve) => {
+        const img = new Image();
+        img.src = '/path/to/image.jpg'; // Замените на реальный путь
+        img.onload = resolve;
+      }),
+      fetch('/path/to/data.json') // Замените на реальный API
+        .then((response) => response.json())
+        .then(() => Promise.resolve()),
+    ];
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+    Promise.all(resourcesToLoad)
+      .then(() => setIsLoading(false))
+      .catch((error) => {
+        console.error('Ошибка загрузки ресурсов:', error);
+        setIsLoading(false); // В любом случае прячем загрузчик
+      });
   }, []);
 
   if (isLoading) {
-    return <Loader />; // Показываем загрузчик до завершения загрузки
+    return <Loader />;
   }
 
   return (
