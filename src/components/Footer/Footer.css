@@ -119,7 +119,7 @@ footer {
 
 @media screen and (max-width:431px) {
    footer {
-      height: 55vh;
+      height: 400px;
       background-position: center;
       background-size: cover;
    }
@@ -181,7 +181,7 @@ footer {
 
 @media screen and (max-width: 391px) {
    footer {
-      height: 60vh;
+      height: 400px;
    }
 
    .footer-nav-link {
@@ -201,7 +201,7 @@ footer {
 
 @media screen and (max-width: 376px) {
    footer {
-      height: 80vh;
+      height: 420px;
    }
 
 }
