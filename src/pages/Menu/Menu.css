@@ -261,9 +261,26 @@
    .menu-tipes .type-active {
       border-bottom: 1px solid var(--brown-color);
    }
-      .ver-line-t {
-         height: 20px;
-         border: 1px solid #803D0E;
-         margin-bottom: 15px;
-      }
+
+   .ver-line-t {
+      height: 20px;
+      border: 1px solid #803D0E;
+      margin-bottom: 15px;
+   }
+}
+
+@media screen and (max-width: 390px) {
+   .food-card-top {
+      font-size: 20px;
+   }
+   .food-title{
+      width: 70%;
+   }
+   .food-card{
+      height: 100px;
+      gap: 10px;
+   }
+   .food-card-right{
+      height: 100%;
+   }
 }
