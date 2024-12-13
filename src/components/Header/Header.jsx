@@ -56,7 +56,7 @@ const Header = () => {
                   <div className="phone-text">+1 773-322-7315</div>
                </div>
                <div className="logo-img">
-                  <Link to={'/'}><img src={taryLogo} alt="" /></Link>
+                  <Link to={'/tary.chicago'}><img src={taryLogo} alt="" /></Link>
                </div>
                <div className="location-all">
                   <div className="location-texts">
@@ -74,8 +74,8 @@ const Header = () => {
                   <Link className={`nav-link ${isActive('/#contact')}`} to={'/tary.chicago#contact'}>Contact Us</Link>
                </ul>
             </div>
-            <div className="header-mobile-content">
-               <img src={taryLogo} alt="" className="logo-mobile" />
+            <div className="header-mobile-content"><Link to={'/tary.chicago'}>
+               <img src={taryLogo} alt="" className="logo-mobile" /></Link>
                <button onClick={() => setOpen(!open)}>
                   <span className="line"></span>
                   <span id="line-2" className="line"></span>
@@ -92,14 +92,13 @@ const Header = () => {
                      width="30"
                      height="30"
                      viewBox="0 0 24 24"
-                     style={{ fill: "rgba(0, 0, 0, 1)", transform: "", msFilter: "" }}
+                     style={{ fill: "rgba(0, 0, 0, 1)" }}
                   >
-                     <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
-                     <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8-8-8 3.589-8 8 3.589-8 8-8z"></path>
+                     <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
                   </svg>
                </div>
                <div className="side-logo">
-                  <img src={taryLogo} alt="" />
+                  <Link to={'/tary.chicago'}><img src={taryLogo} alt="" /></Link>
                </div>
                <ul className="side-nav-links">
                   <Link
