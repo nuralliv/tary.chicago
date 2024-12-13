@@ -189,10 +189,11 @@
 @media screen and (max-width: 431px) {
    .about {
       height: 100vh;
+      align-items: flex-start;
    }
 
    .about h2 {
-      margin-top: 50px;
+      margin-top: 150px;
    }
 
    .about-content {
