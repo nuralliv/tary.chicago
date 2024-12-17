@@ -238,6 +238,7 @@
 
    .food-ingredients {
       font-size: 14px;
+      width: 100%;
    }
 
    .menu-list {
@@ -245,6 +246,7 @@
    }
 
    .food-card {
+      height: 110px;
       width: 100%;
    }
 
@@ -269,18 +271,23 @@
    }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 416px) {
    .food-card-top {
       font-size: 20px;
    }
-   .food-title{
+
+   .food-title {
       width: 70%;
    }
-   .food-card{
-      height: 100px;
+
+   .food-card {
       gap: 10px;
+      height: 110px;
+      padding: 7px;
    }
-   .food-card-right{
+
+   .food-card-right {
       height: 100%;
    }
+
 }
