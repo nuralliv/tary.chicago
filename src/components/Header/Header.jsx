@@ -2,21 +2,17 @@ import './Header.css';
 import phoneIcon from '../../assets/img/header/phoneIcon.svg';
 import taryLogo from '../../assets/img/header/taryLogo.svg';
 import locationIcon from '../../assets/img/header/locationIcon.svg';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Header = () => {
    const location = useLocation();
+   const navigate = useNavigate();
    const [open, setOpen] = useState(false);
-   const [isScrolling, setIsScrolling] = useState(false);
 
    // Lock scrolling when sidebar is open
    useEffect(() => {
-      if (open) {
-         document.body.style.overflow = 'hidden';
-      } else {
-         document.body.style.overflow = '';
-      }
+      document.body.style.overflow = open ? 'hidden' : '';
    }, [open]);
 
    // Smooth scroll to anchor links
@@ -27,43 +23,39 @@ const Header = () => {
             section.scrollIntoView({ behavior: 'smooth' });
          }
       }
-   }, [location.hash]);
+   }, [location]);
 
-   // Handle header visibility on scroll
-   useEffect(() => {
-      let lastScrollY = window.scrollY;
-      const handleScroll = () => {
-         if (window.scrollY > lastScrollY) {
-            setIsScrolling(true);
-         } else {
-            setIsScrolling(false);
+   // Функция для кнопки "Contact Us"
+   const handleContactScroll = (e) => {
+      e.preventDefault();
+      navigate('/tary.chicago'); // Переход на главную страницу
+      setTimeout(() => {
+         const contactSection = document.querySelector('#contact');
+         if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
          }
-         lastScrollY = window.scrollY;
-      };
-
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-   }, []);
+      }, 100); // Небольшая задержка для корректной загрузки
+   };
 
    const isActive = (path) => (location.pathname === path ? 'active' : '');
 
    return (
       <>
-         <header className={isScrolling ? 'scrolling' : ''}>
+         <header>
             <div className="header-top">
                <div className="phone-all">
                   <img src={phoneIcon} alt="" />
                   <div className="phone-text">+1 773-322-7315</div>
                </div>
                <div className="logo-img">
-                  <Link to={'/tary.chicago'}><img src={taryLogo} alt="" /></Link>
+                  <Link to={'/tary.chicago'}><img src={taryLogo} alt="Logo" /></Link>
                </div>
                <div className="location-all">
                   <div className="location-texts">
                      <div className="location-text">111 West Illinois Street,</div>
                      <div className="location-text">Chicago, Illinois 60654</div>
                   </div>
-                  <img src={locationIcon} alt="" />
+                  <img src={locationIcon} alt="Location Icon" />
                </div>
             </div>
             <div className="header-bottom">
@@ -71,11 +63,13 @@ const Header = () => {
                   <Link className={`nav-link ${isActive('/')}`} to={'/tary.chicago'}>Home</Link>
                   <Link className={`nav-link ${isActive('/about')}`} to={'/tary.chicago/about'}>About Us</Link>
                   <Link className={`nav-link ${isActive('/menu')}`} to={'/tary.chicago/menu'}>Menu</Link>
-                  <Link className={`nav-link ${isActive('/#contact')}`} to={'/tary.chicago#contact'}>Contact Us</Link>
+                  <a href="#contact" onClick={handleContactScroll} className="nav-link">Contact Us</a>
                </ul>
             </div>
-            <div className="header-mobile-content"><Link to={'/tary.chicago'}>
-               <img src={taryLogo} alt="" className="logo-mobile" /></Link>
+            <div className="header-mobile-content">
+               <Link to={'/tary.chicago'}>
+                  <img src={taryLogo} alt="Mobile Logo" className="logo-mobile" />
+               </Link>
                <button onClick={() => setOpen(!open)}>
                   <span className="line"></span>
                   <span id="line-2" className="line"></span>
@@ -84,6 +78,7 @@ const Header = () => {
             </div>
          </header>
 
+         {/* Side Bar */}
          <div className="side-bar-all" id={open ? 'side-open' : ''}>
             <div className="side-bar">
                <div className="close-btn" onClick={() => setOpen(false)}>

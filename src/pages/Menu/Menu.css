@@ -269,6 +269,10 @@
       border: 1px solid #803D0E;
       margin-bottom: 15px;
    }
+
+   .food-title {
+      width: 70%;
+   }
 }
 
 @media screen and (max-width: 416px) {
