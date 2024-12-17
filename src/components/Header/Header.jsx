@@ -68,10 +68,10 @@ const Header = () => {
             </div>
             <div className="header-bottom">
                <ul className="nav-links">
-                  <Link className={`nav-link ${isActive('/')}`} to={'/'}>Home</Link>
-                  <Link className={`nav-link ${isActive('/about')}`} to={'/about'}>About Us</Link>
-                  <Link className={`nav-link ${isActive('/menu')}`} to={'/menu'}>Menu</Link>
-                  <Link className={`nav-link ${isActive('/#contact')}`} to={'/#contact'}>Contact Us</Link>
+                  <Link className={`nav-link ${isActive('/')}`} to={'/tary.chicago'}>Home</Link>
+                  <Link className={`nav-link ${isActive('/about')}`} to={'/tary.chicago/about'}>About Us</Link>
+                  <Link className={`nav-link ${isActive('/menu')}`} to={'/tary.chicago/menu'}>Menu</Link>
+                  <Link className={`nav-link ${isActive('/#contact')}`} to={'/tary.chicago#contact'}>Contact Us</Link>
                </ul>
             </div>
             <div className="header-mobile-content"><Link to={'/tary.chicago'}>
