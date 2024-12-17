@@ -38,7 +38,7 @@ const Hero = () => {
             offering a unique culinary journey in the heart of Kazakhstan.
          </p>
          <button>
-            <Link className="men-nav" to={'/menu'}>
+            <Link className="men-nav" to={'/tary.chicago/menu'}>
                <span>View Menu</span>
             </Link>
          </button>
