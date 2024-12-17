@@ -31,12 +31,12 @@ const Menu = () => {
             <div className="menu-min">
                <img src={mealMenu} alt="" />
                <div className="ver-line"></div>
-               <button><Link className='men-nav' to={'/menu'}>Main menu</Link></button>
+               <button><Link className='men-nav' to={'/tary.chicago/menu'}>Main menu</Link></button>
             </div>
             <div className='menu-min'
             ><img src={drinkMenu} alt="" />
                <div className="ver-line"></div>
-               <button><Link className='men-nav' to={'/menu'}>Tea & Coffee</Link></button>
+               <button><Link className='men-nav' to={'/tary.chicago/menu'}>Tea & Coffee</Link></button>
             </div>
 
          </div>

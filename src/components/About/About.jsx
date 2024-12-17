@@ -24,7 +24,7 @@ const About = () => {
                   <span id='midle'>Our space is thoughtfully designed with elegant Kazakh dishware, handcrafted wooden bowls, and cozy rugs, creating a <span className='broown'>warm</span> and <span className='broown'>inviting</span> atmosphere.</span>
                   <span>We’re dedicated to providing exceptional service and a memorable experience for every guest.</span>
                </p>
-               <button data-aos="fade-up" data-aos-delay="400"><Link to={'/about'} className='men-nav'>Learn More</Link></button>
+               <button data-aos="fade-up" data-aos-delay="400"><Link to={'/tary.chicago/about'} className='men-nav'>Learn More</Link></button>
             </div>
             <div className="about-right">
                <img data-aos="fade-left" className='img-first' src={image1} alt="" />
