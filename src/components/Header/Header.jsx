@@ -60,9 +60,9 @@ const Header = () => {
             </div>
             <div className="header-bottom">
                <ul className="nav-links">
-                  <Link className={`nav-link ${isActive('/')}`} to={'/tary.chicago'}>Home</Link>
-                  <Link className={`nav-link ${isActive('/about')}`} to={'/tary.chicago/about'}>About Us</Link>
-                  <Link className={`nav-link ${isActive('/menu')}`} to={'/tary.chicago/menu'}>Menu</Link>
+                  <Link className={`nav-link ${isActive('/tary.chicago')}`} to={'/tary.chicago'}>Home</Link>
+                  <Link className={`nav-link ${isActive('/tary.chicago/about')}`} to={'/tary.chicago/about'}>About Us</Link>
+                  <Link className={`nav-link ${isActive('/tary.chicago/menu')}`} to={'/tary.chicago/menu'}>Menu</Link>
                   <a href="#contact" onClick={handleContactScroll} className="nav-link">Contact Us</a>
                </ul>
             </div>
@@ -97,28 +97,28 @@ const Header = () => {
                </div>
                <ul className="side-nav-links">
                   <Link
-                     className={`side-nav-link ${isActive('/')}`}
+                     className={`side-nav-link ${isActive('/tary.chicago')}`}
                      to={'/tary.chicago'}
                      onClick={() => setOpen(false)}
                   >
                      Home
                   </Link>
                   <Link
-                     className={`side-nav-link ${isActive('/about')}`}
+                     className={`side-nav-link ${isActive('/tary.chicago/about')}`}
                      to={'/tary.chicago/about'}
                      onClick={() => setOpen(false)}
                   >
                      About Us
                   </Link>
                   <Link
-                     className={`side-nav-link ${isActive('/menu')}`}
+                     className={`side-nav-link ${isActive('/tary.chicago/menu')}`}
                      to={'/tary.chicago/menu'}
                      onClick={() => setOpen(false)}
                   >
                      Menu
                   </Link>
                   <Link
-                     className={`side-nav-link ${isActive('/#contact')}`}
+                     className={`side-nav-link ${isActive('/tary.chicago#contact')}`}
                      to={'/tary.chicago#contact'}
                      onClick={() => setOpen(false)}
                   >
