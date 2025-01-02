@@ -1,14 +1,21 @@
 .menu {
    width: 100%;
-   height: 80vh;
+   height: 120vh;
    display: flex;
    flex-direction: column;
-   gap: 30px;
    align-items: center;
    position: relative;
    z-index: 0;
    margin: 0 0 40px 0;
 
+}
+
+.menu-comp-top {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   margin: 20px;
 }
 
 .menu h2 {
@@ -19,7 +26,7 @@
    color: var(--text-color-b);
 }
 
-.menu p {
+.menu .menu-tit {
    font-family: "Mulish", sans-serif;
    text-align: center;
    font-weight: 300;
@@ -33,9 +40,11 @@
    position: absolute;
    z-index: -1;
    display: flex;
-   top: 40%;
+   top: 0;
    flex-direction: column;
    width: 100%;
+   height: 92%;
+   justify-content: space-between;
    overflow-x: hidden;
 }
 
@@ -48,7 +57,7 @@
 }
 
 .back-rec {
-   height: 250px;
+   height: 450px;
    width: 100%;
    background-color: #FFF4D4;
 }
@@ -56,38 +65,82 @@
 
 .menus {
    display: flex;
-   width: 64%;
    height: 600px;
    justify-content: space-between;
+   gap: 30px;
 
 }
 
-.menu-min {
-   height: 100%;
-   width: 450px;
+.meal-content {
+   width: 97%;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   gap: 3px;
+   margin-bottom: 5px;
 }
 
-.menu-min img {
+.meal-content h4 {
+   color: #f38339;
+   font-family: "Cormorant", serif;
+   font-size: 25px;
+   font-weight: 400;
+}
+
+.meal-content .meal-name {
+   color: #FFC298;
+   font-weight: 400;
+   font-size: 20px;
+}
+
+.meal-content p {
+   letter-spacing: 0;
+   color: #fff;
    width: 100%;
-   height: 70%;
-   object-fit: cover;
+   text-align: left;
+   font-size: 14px;
+   margin: 0;
+   font-family: "Mulish", sans-serif;
+   font-weight: 300;
 }
 
-.menu-min .ver-line {
-   border: 1.5px solid var(--brown-color);
-   height: 60px;
-   margin-bottom: 20px;
-   margin-top: -20px;
+.special-meal {
+   height: 90%;
+   width: 250px;
+   background-position: center;
+   background-size: cover;
+   transition: 2s ease;
+}
+
+.special-meal:hover .meal-dark {
+   display: flex;
+   opacity: 1;
+}
+
+.to-menu-page {
+   color: inherit;
+   text-decoration: none;
+}
+
+.meal-dark {
+   width: 100%;
+   height: 100%;
+   background-color: rgb(0, 0, 0, 0.5);
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+   transition: display 1s ease, opacity 1s ease;
+   opacity: 0;
+}
+
+.meal-dark:hover {
+   display: block;
 }
 
 .men-nav {
    text-decoration: none;
 }
 
-.menu-min button {
+.menu-component-btn {
    position: relative;
    padding: 10px 28px;
    font-size: 24px;
@@ -100,33 +153,36 @@
    font-weight: 500;
    font-family: "Cormorant", serif;
    overflow: hidden;
-   transition: color 0.3s ease;
+   transition: color 0.4s ease;
+   /* Оставляем transition только для цвета текста */
    cursor: pointer;
+   text-transform: capitalize;
+   z-index: 0;
+   /* Добавляем z-index, чтобы кнопка была над ::before */
 }
 
-.menu-min button::before {
+.menu-component-btn::before {
    content: '';
    position: absolute;
    top: 0;
    left: 0;
-   width: 0;
+   width: 0%;
+   /* Начальная ширина 0% */
    height: 100%;
    background-color: var(--brown-color);
    transition: width 0.4s ease;
    z-index: -1;
-   /* Чтобы фон находился позади текста */
 }
 
-.menu-min button:hover::before {
-   width: 100%;
-   /* Заполняет всю кнопку */
-}
-
-.menu-min button:hover {
+.menu-component-btn:hover {
    color: #fff;
    /* Цвет текста при наведении */
 }
 
+.menu-component-btn:hover::before {
+   width: 100%;
+   /* При наведении ширина становится 100% */
+}
 
 @media screen and (max-width: 1025px) {
    .menu {
