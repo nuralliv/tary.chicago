@@ -7,16 +7,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Menu = () => {
-   const [menuData, setMenuData] = useState([]); // Данные из API
+   const [menuData, setMenuData] = useState([]);
+   const [currentSlide, setCurrentSlide] = useState(0);
+   const [isMobile, setIsMobile] = useState(window.innerWidth < 431);
 
    useEffect(() => {
       AOS.init({
          duration: 1200,
       });
 
-      // Функция загрузки данных из Google Sheets
       const fetchMenuData = async () => {
-         const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0'; // ID таблицы
+         const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0';
          const RANGE = 'Signature';
          const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU';
 
@@ -40,7 +41,24 @@ const Menu = () => {
       };
 
       fetchMenuData();
+
+      const handleResize = () => {
+         setIsMobile(window.innerWidth < 431);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
    }, []);
+
+   useEffect(() => {
+      if (isMobile) {
+         const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % menuData.length);
+         }, 5000);
+
+         return () => clearInterval(interval);
+      }
+   }, [isMobile, menuData]);
 
    return (
       <section className='menu'>
@@ -63,16 +81,15 @@ const Menu = () => {
                <img src={backOu} id='ou-third' alt="" />
             </div>
          </div>
-         <div className="menus">
+         <div className={`menus ${isMobile ? 'mobile-slider' : ''}`}>
             {menuData.map((meal, index) => (
                <div
                   key={index}
-                  data-aos={index % 2 === 0 ? "fade-down" : "fade-up"}
-                  data-aos-delay="400"
-                  className="special-meal"
+                  className={`special-meal ${isMobile && index === currentSlide ? 'active' : ''
+                     }`}
                   style={{
                      backgroundImage: `url(${meal.image})`,
-                     marginTop: index % 2 === 0 ? '50px' : '0',
+                     display: isMobile && index !== currentSlide ? 'none' : 'block',
                   }}
                >
                   <div className="meal-dark">
@@ -84,6 +101,16 @@ const Menu = () => {
                </div>
             ))}
          </div>
+         {isMobile && (
+            <div className="slider-controls">
+               <button onClick={() => setCurrentSlide((currentSlide - 1 + menuData.length) % menuData.length)}>
+<svg xmlns="http://www.w3.org/2000/svg" width={35} height={35} viewBox="0 0 24 24" style={{fill: 'white', transform: '', msfilter: ''}}><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" /></svg>
+                              </button>
+               <button onClick={() => setCurrentSlide((currentSlide + 1) % menuData.length)}>
+<svg xmlns="http://www.w3.org/2000/svg" width={35} height={35} viewBox="0 0 24 24" style={{fill: 'white', transform: '', msfilter: ''}}><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" /></svg>
+                            </button>
+            </div>
+         )}
       </section>
    );
 };

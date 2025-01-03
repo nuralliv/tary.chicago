@@ -215,6 +215,7 @@
    }
 
    .meal-content p {
+      width: 100%;
       font-size: 11px;
    }
 
@@ -295,28 +296,25 @@
    .back-uzor .uzor-images img {
       height: 80px;
    }
-       .back-uzor {
-          top: 0;
-          height: 106%;
-       }
+
+   .back-uzor {
+      top: 0;
+      height: 106%;
+   }
 }
 
 @media screen and (max-width:431px) {
    .menu {
-      height: 900px;
-      margin-top: 50px;
+      height: 500px;
       margin-bottom: 100px;
+      margin-top: 50px;
    }
+
    .menu .menu-tit {
       width: 95%;
    }
 
-   .menus {
-      flex-direction: column;
-      align-items: center;
-      width: 90%;
-      gap: 20px;
-   }
+   
    .back-rec {
       display: none;
    }
@@ -331,9 +329,9 @@
       width: 100%;
    }
 
-      .menu-component-btn{
-         width: 100%;
-      }
+   .menu-component-btn {
+      width: 100%;
+   }
 
    #ou-third {
       display: none;
@@ -342,21 +340,66 @@
    #ou-second {
       display: none;
    }
-
-
-  
-}
-
-@media screen and (max-width: 391px) {
-   .menu {
-      height: 800px;
-      margin-top: 50px;
-   }
-}
-
-@media screen and (max-width: 376px) {
-   .menu {
-      height: 900px;
+   .menu-comp-top{
+      margin: 10px 0;
+      width: 90%;
    }
 
+   .menus {
+      flex-direction: row;
+      align-items: center;
+      width: 90%;
+      gap: 0;
+      overflow: hidden;
+      position: relative;
+   }
+
+   .special-meal {
+      width: 100%;
+      height: 300px;
+      margin: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+   }
+
+   .special-meal:not(.active) {
+      display: none;
+   }
+
+   .slider-controls {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 120px;
+      width: 88%;
+      z-index: 2;
+   }
+
+   .slider-controls button {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      border: none;
+      padding: 2px 5px;
+      cursor: pointer;
+      font-size: 16px;
+   }
+
+   
+      .menu-comp-top{
+         gap: 15px;
+      }
+            .meal-content .meal-name{
+               font-size: 20px;
+            }
+                        .meal-content p{
+                           font-size: 14px;
+                           width: 100%;
+                        }
+                        .meal-content{
+                           margin-bottom: 10px;
+                           padding-bottom: 10px;
+                        }
+                        .uzor-images{
+                           overflow-x: hidden;
+                        }
 }
+
