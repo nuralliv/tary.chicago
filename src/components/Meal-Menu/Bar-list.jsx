@@ -6,8 +6,8 @@ const BarList = () => {
    const [filteredData, setFilteredData] = useState([]); // Отфильтрованные данные
    const [activeCategory, setActiveCategory] = useState(''); // Активная категория
 
-   const SPREADSHEET_ID = '1ifL9_nSLASJLZIT5JXay-JSQgkNMz1dsgSM-EEROwis'; // ID таблицы
-   const RANGE = 'Sheet1'; // Имя листа или диапазон
+   const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0'; // ID таблицы
+   const RANGE = 'Drinks'; // Имя листа или диапазон
    const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU'; // Ваш API ключ
 
    useEffect(() => {
@@ -20,7 +20,7 @@ const BarList = () => {
             const rows = response.data.values;
 
             // Преобразуем данные в объект с полями
-            const formattedData = rows.slice(1).map((row) => ({
+            const formattedData = rows.slice(2).map((row) => ({
                name: row[0] || 'Unknown', // Проверка на пустое значение
                cost: row[2] || 'N/A',
                image: row[3] || '',
