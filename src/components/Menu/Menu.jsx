@@ -8,8 +8,7 @@ import 'aos/dist/aos.css';
 
 const Menu = () => {
    const [menuData, setMenuData] = useState([]);
-   const [currentSlide, setCurrentSlide] = useState(0);
-   const [isMobile, setIsMobile] = useState(window.innerWidth < 431);
+   const [activeIndex, setActiveIndex] = useState(null);
 
    useEffect(() => {
       AOS.init({
@@ -41,31 +40,22 @@ const Menu = () => {
       };
 
       fetchMenuData();
-
-      const handleResize = () => {
-         setIsMobile(window.innerWidth < 431);
-      };
-
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
    }, []);
 
-   useEffect(() => {
-      if (isMobile) {
-         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % menuData.length);
-         }, 5000);
-
-         return () => clearInterval(interval);
-      }
-   }, [isMobile, menuData]);
+   const toggleDescription = (index) => {
+      setActiveIndex(activeIndex === index ? null : index);
+   };
 
    return (
       <section className='menu'>
          <div className="menu-comp-top">
             <h2 data-aos="fade-up">Special Menu</h2>
             <p className='menu-tit' data-aos="fade-up" data-aos-delay="200">
-               Discover the heart of our culinary artistry with our carefully curated Special Menu, designed to delight your senses and elevate your dining experience.
+               Discover the heart of our culinary artistry with our carefully curated
+               Special Menu, designed to delight your senses and elevate your dining
+               experience. Each dish is crafted using the finest ingredients, blending
+               tradition with innovation to bring you flavors that are truly
+               unforgettable.
             </p>
             <button className='menu-component-btn'>
                <Link to={'/tary.chicago/menu'} className='to-menu-page'>
@@ -76,24 +66,26 @@ const Menu = () => {
          <div className="back-uzor">
             <div className="back-rec"></div>
             <div className="uzor-images">
-               <img src={backOu} alt="" />
-               <img src={backOu} id='ou-second' alt="" />
-               <img src={backOu} id='ou-third' alt="" />
+               <img src={backOu} alt='' />
+               <img src={backOu} id='ou-second' alt='' />
+               <img src={backOu} id='ou-third' alt='' />
             </div>
          </div>
-         <div className={`menus ${isMobile ? 'mobile-slider' : ''}`}>
+         <div className="menus">
             {menuData.map((meal, index) => (
                <div
                   key={index}
-                  className={`special-meal ${isMobile && index === currentSlide ? 'active' : ''
-                     }`}
+                  data-aos={index % 2 === 0 ? 'fade-down' : 'fade-up'}
+                  data-aos-delay='400'
+                  className='special-meal'
                   style={{
                      backgroundImage: `url(${meal.image})`,
-                     display: isMobile && index !== currentSlide ? 'none' : 'block',
+                     marginTop: index % 2 === 0 ? '50px' : '0',
                   }}
                >
                   <div className="meal-dark">
                      <div className="meal-content">
+                        <h4 className="cost">${meal.cost}</h4>
                         <h3 className='meal-name'>{meal.name}</h3>
                         <p>{meal.description}</p>
                      </div>
@@ -101,16 +93,79 @@ const Menu = () => {
                </div>
             ))}
          </div>
-         {isMobile && (
-            <div className="slider-controls">
-               <button onClick={() => setCurrentSlide((currentSlide - 1 + menuData.length) % menuData.length)}>
-<svg xmlns="http://www.w3.org/2000/svg" width={35} height={35} viewBox="0 0 24 24" style={{fill: 'white', transform: '', msfilter: ''}}><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" /></svg>
-                              </button>
-               <button onClick={() => setCurrentSlide((currentSlide + 1) % menuData.length)}>
-<svg xmlns="http://www.w3.org/2000/svg" width={35} height={35} viewBox="0 0 24 24" style={{fill: 'white', transform: '', msfilter: ''}}><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" /></svg>
-                            </button>
-            </div>
-         )}
+
+         {/* Mobile Version */}
+         <div className='menus-mob'>
+            {menuData.map((meal, index) => (
+               <div
+                  key={index}
+                  className={`special-meal-mob ${activeIndex === index ? 'active' : ''
+                     }`}
+                  onClick={() => toggleDescription(index)}
+                  style={
+                     {
+                        backgroundImage: `url(${meal.image})`,
+                        zIndex: index,
+                     }
+
+                  }
+               >
+                  <div
+                     className='meal-dark-mob'
+                     style={{
+                        backgroundColor:
+                           index % 2 === 0
+                              ? 'rgba(255, 255, 255, 0.)'
+                              : 'rgba(0, 0, 0, 0.7)',
+                     }}
+                  >
+
+                     <div className='meal-content-mob'>
+                        <div className="meal-content-mob-top">
+
+                           <h3
+                              className='meal-name-mob'
+                              style={{
+                                 color:
+                                    index % 2 === 0
+                                       ? 'black'
+                                       : '#FFC298',
+                              }}
+                           >
+                              {meal.name}
+                           </h3>
+                           <h4
+                              className='cost-mob'
+                              style={{
+                                 color:
+                                    activeIndex === index
+                                       ? '#D97720'
+                                       : index % 2 === 0
+                                          ? '#D97720'
+                                          : '#D97720',
+                              }}
+                           >
+                              ${parseFloat(meal.cost).toFixed(2)}
+                           </h4>
+                        </div>
+
+                        <p
+                           className={`meal-description-mob ${activeIndex === index ? 'visible' : ''
+                              }`}
+                           style={{
+                              color:
+                                 index % 2 === 0
+                                    ? 'black'
+                                    : 'white',
+                           }}
+                        >
+                           {meal.description}
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            ))}
+         </div>
       </section>
    );
 };
