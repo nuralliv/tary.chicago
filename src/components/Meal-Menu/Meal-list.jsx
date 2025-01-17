@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const MealList = () => {
-   const [foodData, setFoodData] = useState([]); // Все данные о еде
-   const [filteredData, setFilteredData] = useState([]); // Отфильтрованные данные
-   const [activeCategory, setActiveCategory] = useState(''); // Активная категория
+   const [foodData, setFoodData] = useState([]); 
+   const [filteredData, setFilteredData] = useState([]); 
+   const [activeCategory, setActiveCategory] = useState(''); 
 
-   const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0'; // ID таблицы
-   const RANGE = 'Main'; // Имя листа или диапазон
-   const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU'; // Ваш API ключ
+   const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0'; 
+   const RANGE = 'Main'; 
+   const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU'; 
 
    useEffect(() => {
       const fetchFoodData = async () => {
@@ -19,9 +19,8 @@ const MealList = () => {
 
             const rows = response.data.values;
 
-            // Преобразуем данные в объект с полями
             const formattedData = rows.slice(2).map((row) => ({
-               name: row[0] || 'Unknown', // Проверка на пустое значение
+               name: row[0] || 'Unknown', 
                cost: row[2] || 'N/A',
                image: row[3] || '',
                category: row[4] || 'General',
@@ -30,7 +29,7 @@ const MealList = () => {
             }));
 
             setFoodData(formattedData);
-            setFilteredData(formattedData); // По умолчанию отображаем все данные
+            setFilteredData(formattedData); 
          } catch (error) {
             console.error('Ошибка загрузки данных из Google Sheets:', error);
          }
@@ -42,13 +41,12 @@ const MealList = () => {
    const handleFilter = (category) => {
       setActiveCategory(category);
       if (category === '') {
-         setFilteredData(foodData); // Если категория пустая, отображаем все данные
+         setFilteredData(foodData); 
       } else {
          setFilteredData(foodData.filter((food) => food.category.toUpperCase() === category.toUpperCase())); // filter
       }
    };
 
-   // Получаем уникальные категории
    const uniqueCategories = Array.from(new Set(foodData.map(food => food.category))).sort();
 
    return (
