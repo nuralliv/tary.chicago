@@ -43,7 +43,7 @@ function App() {
       <Helmet>
         <title>Tary Chicago website </title>
         <meta name="description" content="Welcome to Tary Restaurant, a unique blend of exquisite cuisine and cozy ambiance in the heart of Chicago. We offer signature dishes inspired by global culinary traditions, focusing on fresh ingredients and exceptional flavors. Enjoy a gastronomic journey at Tary — where culinary artistry meets warm hospitality." />
-        <meta name="keywords" content="Tary, Chicago, Restourant, Tary website" />
+        <meta name="keywords" content="Tary, Chicago, Restourant, Tary website github " />
         <meta name="robots" content="index, follow" />
       </Helmet>
       <ScrollToTop />
