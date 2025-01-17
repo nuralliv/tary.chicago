@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /private/
+Sitemap: https://nuralliv.github.io/tary.chicago/sitemap.xml

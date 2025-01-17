@@ -10,7 +10,6 @@ import ScrollToTop from './components/ScrollTop/ScrollTop';
 import Loader from './components/Loader/Loader';
 import { Helmet } from 'react-helmet';
 
-
 function App() {
   const [menu, setMenu] = useState('home-nav');
   const [isLoading, setIsLoading] = useState(true);
@@ -42,15 +41,19 @@ function App() {
   return (
     <>
       <Helmet>
-        <ScrollToTop />
-        <Header menu={menu} setMenu={setMenu} />
-        <Routes>
-          <Route path='/tary.chicago' element={<Home />} />
-          <Route path='/tary.chicago/about' element={<AboutUs />} />
-          <Route path='/tary.chicago/menu' element={<Menu />} />
-        </Routes>
-        <Footer />
+        <title>Tary Chicago website </title>
+        <meta name="description" content="Welcome to Tary Restaurant, a unique blend of exquisite cuisine and cozy ambiance in the heart of Chicago. We offer signature dishes inspired by global culinary traditions, focusing on fresh ingredients and exceptional flavors. Enjoy a gastronomic journey at Tary — where culinary artistry meets warm hospitality." />
+        <meta name="keywords" content="Tary, Chicago, Restourant, Tary website" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
+      <ScrollToTop />
+      <Header menu={menu} setMenu={setMenu} />
+      <Routes>
+        <Route path='/tary.chicago' element={<Home />} />
+        <Route path='/tary.chicago/about' element={<AboutUs />} />
+        <Route path='/tary.chicago/menu' element={<Menu />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
