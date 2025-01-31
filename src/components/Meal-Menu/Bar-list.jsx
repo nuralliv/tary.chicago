@@ -47,7 +47,6 @@ const BarList = () => {
       }
    };
 
-   // Получаем уникальные категории
    const uniqueCategories = Array.from(new Set(foodData.map(food => food.category))).sort();
 
    return (
@@ -65,7 +64,7 @@ const BarList = () => {
                   onClick={() => handleFilter(category)}
                   className={activeCategory === category ? 'filter-active' : ''}
                >
-                  {category}
+                  {category.toUpperCase()}
                </button>
             ))}
          </div>

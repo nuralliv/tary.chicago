@@ -64,7 +64,7 @@ const MealList = () => {
                   onClick={() => handleFilter(category)}
                   className={activeCategory === category ? 'filter-active' : ''}
                >
-                  {category}
+                  {category.toUpperCase()}
                </button>
             ))}
          </div>
