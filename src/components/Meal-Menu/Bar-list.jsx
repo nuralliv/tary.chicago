@@ -41,7 +41,7 @@ const BarList = () => {
    const handleFilter = (category) => {
       setActiveCategory(category);
       if (category === '') {
-         setFilteredData(foodData); // Если категория пустая, отображаем все данные
+         setFilteredData(foodData);
       } else {
          setFilteredData(foodData.filter((food) => food.category.toUpperCase() === category.toUpperCase())); // filter
       }
@@ -72,11 +72,13 @@ const BarList = () => {
          <div className="menu-list">
             {filteredData.map((food, index) => (
                <div className="food-card" key={index}>
-                  <div className="new-status" id={!food.newStatus ? 'hideS' : ''}>New</div>
-                  <img className="food-image" src={food.image} alt={food.name} />
+                  {/* <div className="new-status" id={!food.newStatus ? 'hideS' : ''}>New</div>
+                  <img className="food-image" src={food.image} alt={food.name} /> */}
                   <div className="food-card-right">
                      <div className="food-card-top">
                         <h5 className="food-title">{food.name}</h5>
+                        <div className="food-line"></div>
+
                         <div className="food-cost">
                            $ {parseFloat(food.cost).toFixed(2)}
                         </div>
