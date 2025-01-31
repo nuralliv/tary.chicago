@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const MealList = () => {
-   const [foodData, setFoodData] = useState([]); 
-   const [filteredData, setFilteredData] = useState([]); 
-   const [activeCategory, setActiveCategory] = useState(''); 
+   const [foodData, setFoodData] = useState([]);
+   const [filteredData, setFilteredData] = useState([]);
+   const [activeCategory, setActiveCategory] = useState('');
 
-   const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0'; 
-   const RANGE = 'Main'; 
-   const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU'; 
+   const SPREADSHEET_ID = '1sJp3A-ssEBB6ogctot2OCoA8UgRscd7HmI-JPuGqRc0';
+   const RANGE = 'Main';
+   const API_KEY = 'AIzaSyCH62jcVLuLr9cOMq0UlkUunWtwqydOXZU';
 
    useEffect(() => {
       const fetchFoodData = async () => {
@@ -20,7 +20,7 @@ const MealList = () => {
             const rows = response.data.values;
 
             const formattedData = rows.slice(2).map((row) => ({
-               name: row[0] || 'Unknown', 
+               name: row[0] || 'Unknown',
                cost: row[2] || 'N/A',
                image: row[3] || '',
                category: row[4] || 'General',
@@ -29,7 +29,7 @@ const MealList = () => {
             }));
 
             setFoodData(formattedData);
-            setFilteredData(formattedData); 
+            setFilteredData(formattedData);
          } catch (error) {
             console.error('Ошибка загрузки данных из Google Sheets:', error);
          }
@@ -41,7 +41,7 @@ const MealList = () => {
    const handleFilter = (category) => {
       setActiveCategory(category);
       if (category === '') {
-         setFilteredData(foodData); 
+         setFilteredData(foodData);
       } else {
          setFilteredData(foodData.filter((food) => food.category.toUpperCase() === category.toUpperCase())); // filter
       }
@@ -71,11 +71,12 @@ const MealList = () => {
          <div className="menu-list">
             {filteredData.map((food, index) => (
                <div className="food-card" key={index}>
-                  <div className="new-status" id={!food.newStatus ? 'hideS' : ''}>New</div>
-                  <img className="food-image" src={food.image} alt={food.name} />
+                  {/* <div className="new-status" id={!food.newStatus ? 'hideS' : ''}>New</div>
+                  <img className="food-image" src={food.image} alt={food.name} /> */}
                   <div className="food-card-right">
                      <div className="food-card-top">
                         <h5 className="food-title">{food.name}</h5>
+                        <div className="food-line"></div>
                         <div className="food-cost">
                            $ {parseFloat(food.cost).toFixed(2)}
                         </div>

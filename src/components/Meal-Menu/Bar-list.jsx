@@ -38,7 +38,6 @@ const BarList = () => {
 
       fetchFoodData();
    }, []);
-
    const handleFilter = (category) => {
       setActiveCategory(category);
       if (category === '') {

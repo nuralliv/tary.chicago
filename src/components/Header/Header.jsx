@@ -10,12 +10,10 @@ const Header = () => {
    const navigate = useNavigate();
    const [open, setOpen] = useState(false);
 
-   // Lock scrolling when sidebar is open
    useEffect(() => {
       document.body.style.overflow = open ? 'hidden' : '';
    }, [open]);
 
-   // Smooth scroll to anchor links
    useEffect(() => {
       if (location.hash) {
          const section = document.querySelector(location.hash);
@@ -25,16 +23,15 @@ const Header = () => {
       }
    }, [location]);
 
-   // Функция для кнопки "Contact Us"
    const handleContactScroll = (e) => {
       e.preventDefault();
-      navigate('/tary.chicago'); // Переход на главную страницу
+      navigate('/tary.chicago');
       setTimeout(() => {
          const contactSection = document.querySelector('#contact');
          if (contactSection) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
          }
-      }, 100); // Небольшая задержка для корректной загрузки
+      }, 100);
    };
 
    const isActive = (path) => (location.pathname === path ? 'active' : '');
@@ -119,7 +116,7 @@ const Header = () => {
                   </Link>
                   <Link
                      className={`side-nav-link ${isActive('/tary.chicago#contact')}`}
-                     to={'/tary.chicago#contact'}
+                     to={'/tary.chicago/#contact'}
                      onClick={() => setOpen(false)}
                   >
                      Contact Us

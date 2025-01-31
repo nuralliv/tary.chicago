@@ -78,8 +78,8 @@
 }
 
 .food-ingredients {
-   font-size: 17px;
-   width: 80%;
+   font-size: 16px;
+   width: 100%;
    font-family: "Mulish", sans-serif;
 }
 
@@ -88,7 +88,7 @@
    display: flex;
    gap: 12px;
    width: 46%;
-   height: 110px;
+   height: 6q0px;
    padding: 10px;
    background-color: rgba(70, 44, 33, 0.1);
 }
@@ -103,7 +103,7 @@
 .food-card-right {
    display: flex;
    flex-direction: column;
-   height: 50%;
+   height: 100%;
    gap: 15px;
    width: 100%;
 }
@@ -113,7 +113,11 @@
 }
 
 .food-title {
-   width: 80%;
+   width: fit-content;
+   margin-left: 0;
+   font-size: 22px;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
 }
 
 .food-cost {
@@ -123,10 +127,17 @@
 .food-card-top {
    display: flex;
    width: 100%;
-   align-items: flex-start;
+   align-items: center;
    font-size: 24px;
    font-family: "Cormorant", serif;
    justify-content: space-between;
+}
+
+.food-line {
+   flex-grow: 1;
+   height: 2px;
+   border-bottom: 1px solid #803D0E;
+   margin: 0 10px;
 }
 
 .filters button.filter-active {
@@ -185,6 +196,11 @@
       margin-left: 0;
    }
 
+   .food-title {
+      font-size: 20px;
+      max-width: 70%;
+   }
+
 }
 
 @media screen and (max-width: 831px) {
@@ -203,7 +219,7 @@
    }
 
    .food-card {
-      height: 90px;
+      height: 65px;
    }
 
    .food-card-top {
@@ -213,6 +229,10 @@
 
    .filters button {
       font-size: 20px;
+   }
+
+   .food-title {
+      font-size: 17px;
    }
 }
 
@@ -246,7 +266,7 @@
    }
 
    .food-card {
-      height: 110px;
+      height: 70px;
       width: 100%;
    }
 
@@ -271,7 +291,7 @@
    }
 
    .food-title {
-      width: 70%;
+      width: fit-content;
    }
 }
 
